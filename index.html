@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title> BLACK FRIDAY IMPERDÍVEL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+</style>
+</head>
+<body>
+    <section class="section-container background-section-one">
+        <img src="assets/logo-black-friday-kabum.png" alt="logotipo">
+        
+    </section>
+    <section class= "section-container section-products">
+        <div class="card">
+        <h3 class="produto1">PROJETO</h3>
+        <img src="/assets/projetos.png"
+        <h5 class="description">
+        Projetamos sua vida profissional!</h5>
+        <h4>Valor: R$ 799,99</h4>
+        qtd: <input type="number" value="1" min="1" max="10" id="qtd1">
+       <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Projeto', document.getElementById('qtd1').value, '799.99', 1)"> Comprar </button>
+      </div>
+      <div class="card">
+        <h3 class="produto2">SONHOS</h3>
+        <img src="/assets/sonhos.png"
+        <h5 class="description">
+        Garantimos que você vai realizar seus sonhos</h5>
+        <h4>Valor: R$ 2999,99</h4>
+        qtd: <input type="number" value="1" min="1" max="10" id="qtd2">
+        <button type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Sonhos', document.getElementById('qtd1').value, '2999.99', 2)"> Comprar </button>
+      </div>
+      <p align="center">
+          <a href="carrinho.html"> Ver Carrinho de compras</a>
+      </p>
+<script>
+ function AddCarrinho(produto, qtd, valor, posicao)
+ { 
+ localStorage.setItem("produto" + posicao, produto);
+ localStorage.setItem("qtd" + posicao, qtd);
+ valor = valor * qtd;
+ localStorage.setItem("valor" + posicao, valor);
+ alert("Produto adicionado ao carrinho!");
+ }
+</script>
+    </section>
+    <section class="section-container background-section-two">
+        <div class="card-container">
+            <div id="content">
+                <form id="form" action="processa-dados-form" method="post">
+                    <h1 class="title-forms">"Cadastre o seu e-mail para receber mais promoções</h>
+                    
+                    <h4 class="subtitulo">Nome:</h4>
+                    <input type="text" placeholder=" Nome" id="nome">
+                    
+                    <h4 class="subtitulo">Telefone:</h4>
+                    <input type="text" placeholder=" Telefone" id="telefone">
+                    
+                    <h4 class="subtitulo">E-mail:</h4>
+                    <input type="text" placeholder=" Email" id="email">
+                </form>
+                <div class="button">
+                        <input type="submit" value=" Cadastrar ">
+                    </div>
+            </div>
+        </div>
+        
+    </section>
+    <footer> 
+    <h2>Criado por .... lia.na</h2>
+    <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+<script src="js/script.js"></script>
+</html>

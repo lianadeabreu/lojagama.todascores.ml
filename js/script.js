@@ -1,0 +1,29 @@
+const form = document.getElementById ("form")
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let nome = document.getElementById ("nome").value;
+    let telefone = document.getElementById ("telefone").value;
+    let email = document.getElementById ("email").value;
+    let data = {
+        nome,
+        telefone,
+        email,
+    }
+    let convertData = JSON.stringify(data);
+    
+    localStorage.setItem("lead", convertData)
+    
+    let content = document.getElementById ("content")
+    
+    let carregando = `<p>carregando...</p>`
+    
+    let enviado = `<p>enviado!</p>`
+    
+    content.innerHTML = carregando
+    
+    setTimeout (() => {
+        content.innerHTML = enviado
+    }, 1000)
+    
+})
